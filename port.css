@@ -1,0 +1,125 @@
+body {
+	background-color: #d9b3ff;
+	color:  #17202A;
+	font: 20px "Times New Roman", Times, serif;
+	line-height: 2em;
+	margin: 0;
+}
+.container {
+	width: 80%;
+	margin: auto;
+	overflow: auto;
+}
+#top-header {
+	background-color: #ffc299  ;
+	color:#000000;
+}
+#links {
+    background-color: #b3ccff;
+    
+}
+#links a {
+	color:#000000;
+    text-align: right;
+    font:Times New Roman;
+}
+#links li {
+	display: inline;
+}
+
+img {
+
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    width: 600px;
+    
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+#about-box {
+	float: left;
+	width: 50%;
+	box-sizing: border-box;
+	margin-top: 20px;
+	border: 2px black solid;
+    border-radius: 3px;
+    background-color: #b3b3ff;
+	}
+#projects {
+	float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 2px black solid;
+    border-radius:3px;
+    background-color: #b3b3ff;
+    }
+    
+#skill {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 2px black solid;
+	border-radius:3px;
+    background-color:#b3b3ff;
+
+} 
+#interests {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 3px black solid;
+    border-radius:3px;
+    background-color:#b3b3ff;
+
+}     
+#achievement {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 3px black solid;
+    border-radius:3px;
+    background-color:#b3b3ff;
+
+}  
+#contact {
+
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    border: 3px black solid;
+    border-radius:3px;
+    background-color:#b3b3ff;
+} 
+
+
+
+#main-footer {
+	text-align: center;
+	padding: 15px;
+	margin-top: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
