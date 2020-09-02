@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Users Lists </title>
+    <style media="screen">
+        *{
+            box-sizing: border-box;
+        }
+        header{
+          text-align: center;
+          background-color: #9999ff;
+        }
+        footer{
+        
+          text-align: center;
+          font-size: 1.2vw;
+          padding-bottom: 2em;
+          font-weight: bold;
+        }
+        
+        h1{
+            padding-top:2%;
+            font-size: 2.5vw;
+            word-spacing: 20px;
+            line-height: 20px;
+            text-align: center;
+            color:#1affb2;
+        }
+        h2{
+          padding-bottom:2%;
+          background-color:	#ffbb99;
+          line-height: 10px;
+        }
+        hr {
+          margin-bottom: 3rem;
+          margin-top: 3rem;
+        }
+        
+        button{
+          color: #0000b3;
+          font-size: 1.5vw;
+         
+          cursor: grab;
+          width:20vw;
+          border:3px double #000000;
+          border-radius: 15px;
+          margin-top: 4px;
+          
+        }
+        button:hover{
+          width:15vw;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+          color: #ccccb3
+        }
+        button:active{
+          color:#736699;
+          font-size: 1.5vw;
+          background-color:#47d147;
+          cursor:grab;
+          width:20vw;
+          border:3px double #47d147;
+          border-radius: 12px;
+          margin-top: 4px;
+          box-shadow: 0 5px black;
+          transform: translateY(4px);
+        }
+        body{
+            margin:5%;
+            width:80%;
+            font-family:Times New Roman;
+            background-color: #b3b3ff;
+        }
+        #showInfo{
+          content-align:center;
+        }
+        li{
+          list-style:none;
+        }
+        #showme{
+          margin:10%;
+        }
+        #individual{
+          border:2px double black;
+          margin:2%;
+          background-color:#00004d;
+          overflow:auto;
+        }
+        #sub-individual{
+          display: inline-block;
+          background-color: #fff;
+          padding-right:10%;
+          margin-bottom:5%;
+          margin-top:5%;
+          margin-left:5%;
+          margin-right:5%;
+          border:1px solid black;
+        }
+        img{
+          margin-bottom:5%;
+          margin-top:5%;
+          margin-left:5%;
+          border:2px solid black;
+          margin-bottom:-12px;
+          padding:3px;
+        }
+        a:link{
+          color:  #3333cc;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        a:visited{
+          color:black
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+        }
+        a:hover, a:active {
+          color: red;
+        }
+        .class-one{
+            padding: 14px 25px;
+            text-align: center;
+        }
+        </style>
+    
+</head>
+<body style="background-image: url(resp.jpg);background-repeat: no-repeat; background-attachment: fixed;background-size: 100% 100%; "></body>
+    <h1 >GitHub Users Lists</h1>
+    <button id="showInfo">Load Github Users</button> <br>
+    <div id="showme"></div>
+     <script>
+        document.getElementById("showInfo").addEventListener('click', onProcess);
+
+        function onProcess(){
+            var req = new XMLHttpRequest();
+            req.open('GET', 'https://api.github.com/users', true);
+            req.onload = function() {
+                if(req.status==200){
+                  var people = JSON.parse(req.responseText)
+                  var display= '';
+                  for(var i in people){
+                   display +=
+                   '<div id="individual">' +
+                   '<img src="'+people[i].avatar_url+'" width="20%">'+
+                   '<div id="sub-individual"><ul>' +
+                   '<p><li>ID: <span id="class-one">'+people[i].id+'<span></li></p>' +
+                   '<p><li>Login: <span id="class-one">'+people[i].login+'<span></li></p>' +
+                   '<p><li>Repos: <a href="'+people[i].repos_url +'">'+people[i].repos_url +'</a></li></p>'+
+                   '<p><li>Events: <a href="'+people[i].events_url +'">'+people[i].events_url +'</a></li></p>'+
+                   '<p><li>Received Events: <a href="'+people[i].received_events_url +'">'+people[i].received_events_url +'</a></li></p>'+
+                   '</ul></div>' +
+                   '</div>';
+                   document.getElementById('showme').innerHTML = display;
+                   }
+
+                }
+
+            }
+            req.send();
+        }
+    </script>
+    
+</body>
+</html>
